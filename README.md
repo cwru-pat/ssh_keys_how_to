@@ -2,9 +2,9 @@
 This guide was written for macOS but should work on \*nix based systems.
 
 ## The short and the quick is
-- Create (if needed) and goto the ssh directory
+- Create and set permissions (if needed), and goto the ssh directory
 ```shell
-mkdir ~/.ssh/
+mkdir -m 0700 ~/.ssh/
 cd ~/.ssh/
 ```
 - Generate keys:
@@ -40,7 +40,7 @@ A further step of protection is to use passphrases for each key. This means that
 
 Now the more detailed version of the short:
 
-Navigate to or create `~/.ssh/`. We will store everything related to SSH things from keys to configs in this directory.
+Navigate to or create `~/.ssh/`. Note if you create `~/.ssh/` by hand you should change the permissions to `0700`, you can do this on create as `mkdir -m 0700 ~/.ssh/`. Alternatively if you `ssh` somewhere you will automatically create the directory with the correct permissions. We will store everything related to SSH things from keys to configs in this directory.
 
 To generate a key you will need to enter:
 ```shell
